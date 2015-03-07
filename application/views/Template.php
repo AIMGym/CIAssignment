@@ -22,6 +22,7 @@
                 <li><a href="/About">About</a></li>
                 <li><a href="/Membership">Membership</a></li>
                 <li><a href="/Programs">Programs</a></li>
+                <li><a href="/Locations">Locations</a></li>
                 <li><a href="/Faq">FAQ's</a></li>
             </ul>
             </div>
