@@ -6,7 +6,7 @@ if (!defined('APPPATH'))
 <div class="row">
     
     <!-- main content -->
-    <div id="home-main" class="span12">
+    <div id="start" class="span12">
 
         <div class="col-md-3">
             <div class="link-block">
