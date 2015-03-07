@@ -176,7 +176,7 @@ $autoload['language'] = array();
 
 
 $autoload['helper'] = array('common', 'url');
-$autoload['libraries'] = array('parser');
-$autoload['model'] = array('Gymdata');
+$autoload['libraries'] = array('parser', 'database');
+$autoload['model'] = array('Gymdata', 'Locations', 'Memberships', 'Programs');
 /* End of file autoload.php */
 /* Location: ./application/config/autoload.php */
