@@ -160,4 +160,17 @@ if (!function_exists('showImage')) {
 
 }
 
+if (!function_exists('makeImageUploader'))
+{
+    function makeImageUploader($label, $name,$explain="") {
+      $CI = &get_instance();
+      $parms = array(
+        'label' => $label,
+        'name' => $name,
+        'explain' => $explain
+      );
+      return $CI->parser->parse('_fields/image_upload', $parms, true);
+    }
+}
+
 /* End of file */
