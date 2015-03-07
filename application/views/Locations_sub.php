@@ -6,7 +6,7 @@ if (!defined('APPPATH'))
 
 <!-- load lightbox scripts -->
 <link href="/assets/css/lightbox.css" rel="stylesheet"/>
-<script src="/assets/js/jquery-1.11.0.min.js"></script>
+<script src="/assets/js/jquery-1.11.1.min.js"></script>
 <script src="/assets/js/lightbox.min.js"></script>
     
 
