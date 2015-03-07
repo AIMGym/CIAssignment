@@ -1,20 +1,31 @@
+<?php
+if (!defined('APPPATH'))
+    exit('No direct script access allowed');
+?>
 <div class="row">
-    <div id="home-main" class="span8">
-        
-    <!-- main content -->
-        <h4>Yoga & pilates mat classes</h4>
-        <p>Create harmony within yourself and your environment, integrate the body, the mind, and the spirit. Balance your emotions, actions and intelligence. Exercise, breathe and meditate.
-
-Please sign in for each class that you are taking online</p>
-        <h4>20/20/20 classes</h4>
-        <p>An intelligent and effective workout which includes a combination of cardio, dynamic stretching and weight training. 20 minutes of cardio, 20 minutes of strength, and 20 minutes of core training and flexibility in one class! This allows you to sample a little bit of everything</p>
-
-    <!--Programs Image-->
     
-         <img src="{image}"/>
-        <h2>{name}</h2>
-        <p>{description}<br/>
-        </p>
+    <!-- main content -->
+    <div id="home-main" class="span12">
+        <table class="table-condensed">
+            <tr style="border-top: thick solid grey">
+                <td rowspan="2">
+                    <img src="{image_url}" class ="img-rounded" width="240px" height="160px"/>
+                </td>
+                <td>
+                    <strong>{name}</strong>
+                </td>
+                 <td>
+                    &nbsp;&nbsp;&nbsp;<strong>Price: </strong> {price}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {caption} 
+                </td>
+                <td>
+                        &nbsp;&nbsp;&nbsp;<a class="btn btn-small" href="/program/getOne/{_id}">See Details</a><br/>&nbsp;
+                </td>
+            </tr>
     </div>
-   
+    <!-- end main content-->
 </div>
