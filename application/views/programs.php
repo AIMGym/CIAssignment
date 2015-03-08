@@ -3,7 +3,6 @@ if (!defined('APPPATH'))
     exit('No direct script access allowed');
 ?>
 <div class="row">
-    
     <!-- main content -->
     <div id="start" class="span12">
        {program}
@@ -13,10 +12,10 @@ if (!defined('APPPATH'))
                     <img src="{image1}" class ="img-rounded" width="240px" height="160px"/>
                 </td>
                 <td>
-                    <strong>{name}</strong>
+                 <strong>{name}</strong>
                 </td>
-                 <td>
-                    &nbsp;&nbsp;&nbsp;<strong>Price: </strong> {price}
+                <td>
+               <strong>Price: </strong> {price}
                 </td>
             </tr>
             <tr>
@@ -24,7 +23,7 @@ if (!defined('APPPATH'))
                     {caption} 
                 </td>
                 <td>
-                        &nbsp;&nbsp;&nbsp;<a class="btn btn-small" href="/Program/getOne/{id}">See Details</a><br/>&nbsp;
+                <a class="btn btn-small" href="/Program/getOne/{id}">See Details</a><br/>&nbsp;
                 </td>
             </tr>
         </table>
