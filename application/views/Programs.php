@@ -9,7 +9,7 @@ if (!defined('APPPATH'))
         <table class="table-condensed">
             <tr style="border-top: thick solid grey">
                 <td rowspan="2">
-                    <img src="{image_url}" class ="img-rounded" width="240px" height="160px"/>
+                    <img src="{image1}" class ="img-rounded" width="240px" height="160px"/>
                 </td>
                 <td>
                     <strong>{name}</strong>
@@ -23,7 +23,7 @@ if (!defined('APPPATH'))
                     {caption} 
                 </td>
                 <td>
-                        &nbsp;&nbsp;&nbsp;<a class="btn btn-small" href="/program/getOne/{_id}">See Details</a><br/>&nbsp;
+                        &nbsp;&nbsp;&nbsp;<a class="btn btn-small" href="/program/getOne/{id}">See Details</a><br/>&nbsp;
                 </td>
             </tr>
     </div>
