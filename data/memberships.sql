@@ -64,4 +64,4 @@ Access to all She’s FIT! locations and AIM Fitness locations
 Unlimited sun tanning
 Out-of-town guest privileges
 25% discount on selected retail (excluding clothing and Healthy Transformation Meal Plan)
-Plus all privileges under the Silver Membership.', '74.99', '/data/images/platinum.png', '/data/images/platinum1.png', '/data/images/platinum3.jpg', '/data/images/platinum4.png');
+Plus all privileges under the Silver Membership.', '74.99', '/data/images/platinum.png', '/data/images/platinum1.png', '/data/images/platinum3.jpg', '/data/images/platinum4.jpg');

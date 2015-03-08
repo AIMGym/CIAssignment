@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS `programs` (
   `name` varchar(80) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `caption` varchar(80) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `description` varchar(500) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `date_added` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_added` TIMESTAMP NOT NULL DEFAULT NOW(),
   `location` varchar(80) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `price` decimal(8,2) NOT NULL,
   `image1` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '/data/images/default.jpg',
