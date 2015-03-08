@@ -43,12 +43,12 @@ class Admin extends Application {
         
         $this->data['fid'] = makeTextField('ID#', 'id', $program->id,"Unique quote identifier, system-assigned",10,10,true);
         $this->data['fname'] = makeTextField('Name', 'name', $program->name);
-        $this->data['fcaption'] = makeTextField('Caption', 'caption', $program->caption, 'Caption for the main picture');
+        $this->data['fcaption'] = makeTextField('Caption', 'caption', $program->caption, 'Summary of Program');
         $this->data['fdescription'] = makeTextArea('Description', 'description', $program->description, 'Detailed description of the program', 500, 40, 5);
         $this->data['fcontact'] = makeTextField('Contact', 'contact', $program->contact,'Telephone number and/or email to join the program');
         $this->data['flocation'] = makeTextField('Location', 'location', $program->location, 'The address/location of the program');
         $this->data['fprice'] = makeTextField('Price', 'price', $program->price, 'Cost of the program monthly');
-        $this->data['fimage1'] = makeImageUploader('Main Picture', 'picmain', 'Choose a file to replace this picture');
+        $this->data['fimage1'] = makeImageUploader('Main Picture', 'picmain', 'Choose a file');
         $this->data['fimage2'] = makeImageUploader('Picture 1', 'pic1', 'Choose a file');
         $this->data['fimage3'] = makeImageUploader('Picture 2', 'pic2', 'Choose a file');
         $this->data['fimage4'] = makeImageUploader('Picture 3', 'pic3', 'Choose a file');
@@ -101,6 +101,22 @@ class Admin extends Application {
         if (empty($record->id)) $this->quotes->add($record);
         else $this->quotes->update($record);
         redirect('/admin');
+    }
+    
+    function delete($program)
+    {
+        //get attraction to delete
+        $record = (array)$this->attractionsDB->get($program); 
+        //Column names for images
+        $filesToDelete = array('image1', 'image2', 'image3', 'image4'); 
+        foreach ($filesToDelete as $delete) {
+            if($record[$delete] !== '/data/images/default.jpg'){
+                unlink(FCPATH.$record[$delete]);
+            }
+        }
+        //delete the record after images were deleted
+        $this->programs->delete($program);
+        redirect("/admin");
     }
 
 }
