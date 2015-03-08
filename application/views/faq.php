@@ -17,6 +17,11 @@
         
         <p>{description}<br/>
         </p>
+    
+        <div class="col-md-3">
+            <hr/>
+            <p class="text-info">Administration Page <a class="btn-small btn-primary" href="/admin">Login</a></p>            
+        </div>
     </div>
    
 </div>
