@@ -23,7 +23,7 @@ if (!defined('APPPATH'))
                     {caption} 
                 </td>
                 <td>
-                        &nbsp;&nbsp;&nbsp;<a class="btn btn-small" href="/program/getOne/{id}">See Details</a><br/>&nbsp;
+                        &nbsp;&nbsp;&nbsp;<a class="btn btn-small" href="/Programs/getOne/{id}">See Details</a><br/>&nbsp;
                 </td>
             </tr>
     </div>

@@ -13,7 +13,7 @@ if (!defined('APPPATH'))
                 <br/>
                 <strong>{name}</strong><br/><br/>
                 <img src="{image1}" width="240px" height="160px"/><br/></br>
-                <a class="btn btn-small" href="/locations/getOne/{id}">See Details</a><br/>&nbsp;
+                <a class="btn btn-small" href="/Locations/getOne/{id}">See Details</a><br/>&nbsp;
             </div>
         </div>
     </div>
