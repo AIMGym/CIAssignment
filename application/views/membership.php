@@ -6,6 +6,7 @@ if (!defined('APPPATH'))
     
     <!-- main content -->
     <div id="start" class="span12">
+        {membership}
         <div class="col-md-3">
             <div class="link-block">
                 <br/>
@@ -14,6 +15,7 @@ if (!defined('APPPATH'))
                 <a class="btn btn-small" href="/Membership/getOne/{id}">See Details</a><br/>&nbsp;
             </div>
         </div>
+        {/membership}
     </div>
     <!-- end main content-->
 </div>

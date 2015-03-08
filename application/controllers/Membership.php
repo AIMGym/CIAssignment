@@ -16,7 +16,7 @@ class Membership extends Application{
     function index() {
         
         //Required page
-        $this->data['pagebody'] = 'Membership';
+        $this->data['pagebody'] = 'membership';
         
         //Retrieve all programs from relevant database
         $membership = $this->Memberships->getall();
@@ -29,7 +29,7 @@ class Membership extends Application{
     function getOne($id) {
 
         //Required page
-        $this->data['pagebody'] = 'Membership_sub';
+        $this->data['pagebody'] = 'membership_sub';
 
         //Retrieve info for specified page by id
         $membership = $this->Memberships->get($id);
@@ -49,5 +49,5 @@ class Membership extends Application{
     }
 
 }
-/* End of file Memership.php */
+/* End of file Membership.php */
 /* Location: application/controllers/Memership.php */
