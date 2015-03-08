@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `locations` (
-`id` int(11) NOT NULL,
+`id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `caption` varchar(100) NOT NULL,
   `description` varchar(500) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
@@ -39,25 +39,19 @@ CREATE TABLE IF NOT EXISTS `locations` (
   `image4` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `locations`
---
-ALTER TABLE `locations`
- ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `locations`
---
-ALTER TABLE `locations`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+INSERT INTO `locations`(`name`, `caption`, `description`, `address`, `contact`, `image1`, `image2`, `image3`, `image4`)
+VALUES ('Vancouver', 'Vancouver location (main)', 'Price may vary depending on membership
+Great location in the heart of Vancouver', '1425 Granville St.', '(604)555-0124', '/data/images/location1.gif', '/data/images/platinum3.jpg', '/data/images/platinum4.jpg', '/data/images/yoga2.jpg');
+
+INSERT INTO `locations`(`name`, `caption`, `description`, `address`, `contact`, `image1`, `image2`, `image3`, `image4`)
+VALUES ('Surrey', 'Smallest location', 'Price may vary depending on membership
+Great location in the heart of Surrey', '120 and 64th Ave.', '(604)555-5124', '/data/images/location2.jpg', '/data/images/platinum3.jpg', '/data/images/yoga3.jpg', '/data/images/personaltraining2.jpg');
+
+INSERT INTO `locations`(`name`, `caption`, `description`, `address`, `contact`, `image1`, `image2`, `image3`, `image4`)
+VALUES ('Burnaby', 'Location expanding', 'Price may vary depending on membership
+Great location in the heart of Burnaby', '1658 Willingdon Ave.', '(604)555-4825', '/data/images/location3.jpg', '/data/images/platinum3.jpg', '/data/images/martialarts1.jpg', '/data/images/martialarts2.jpg');

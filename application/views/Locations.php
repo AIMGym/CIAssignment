@@ -12,8 +12,8 @@ if (!defined('APPPATH'))
             <div class="link-block">
                 <br/>
                 <strong>{name}</strong><br/><br/>
-                <img src="{image_url}" width="240px" height="160px"/><br/></br>
-                <a class="btn btn-small" href="/locations/getOne/{_id}">See Details</a><br/>&nbsp;
+                <img src="{image1}" width="240px" height="160px"/><br/></br>
+                <a class="btn btn-small" href="/locations/getOne/{id}">See Details</a><br/>&nbsp;
             </div>
         </div>
     </div>
