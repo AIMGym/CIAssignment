@@ -7,32 +7,34 @@
  * Controller page for the "Locations" page view
  *
  */
-class Locations extends Application{
+class Location extends Application{
     
     function __construct() {
         parent::__construct();
     }
     
-    function index() {
+    function index() 
+    {
         
         //Required page
-        $this->data['pagebody'] = 'Locations';
+        $this->data['pagebody'] = 'locations';
         
         //Retrieve all programs from relevant database
-        $location = $this->Location->getall();
+        $location = $this->Locations->getall();
         $this->data['location'] = $location;
         
         $this->render();
     }
     
     //Returns a specified page regarding locations
-    function getOne($id) {
+    function getOne($id)
+    {
 
         //Required page
-        $this->data['pagebody'] = 'Locations_sub';
+        $this->data['pagebody'] = 'locations_sub';
 
         //Retrieve info for specified page by id
-        $location = $this->Location->get($id);
+        $location = $this->Locations->get($id);
 
         //Populating page with from database
         $this->data['id'] = $location->id;

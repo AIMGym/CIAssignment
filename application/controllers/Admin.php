@@ -90,13 +90,12 @@ class Admin extends Application {
                 // ie.   thisismypic.jpg  -->  'attraction_id_pic1.jpg' //attraction_id will be replaced with a variable.
                 if($_FILES[$uploadpic]['name'] != ""){
                     $temp = $_FILES[$uploadpic]['name'];
-                    $_FILES[$uploadpic]['name'] = $attraction_num . $uploadpic . substr($temp, -4);
+                    $_FILES[$uploadpic]['name'] =  $record->id . $uploadpic . substr($temp, -4);
                 }
 
                 //call the codeigniter upload $uploadpic is the form upload control
                 if ($this->upload->do_upload($uploadpic))
                 {   
-                    $record = (array) $this->attractionsDB->get($attraction_num);
                     if($uploadpic == 'picmain'){
                         $record['image1'] = '/data/images/' . $_FILES[$uploadpic]['name'];
                     }
