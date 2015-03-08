@@ -8,7 +8,14 @@
         <th>Caption</th>
         <th>Delete</th>
     </tr>
-    {tablerows}
+    {programs}
+    <tr>
+        <td>{id}</td>
+        <td>{name}</td>
+        <td>{caption}</td>
+        <td><a class="btn btn-danger" href="/admin/delete/{id}">Delete</a></td>
+    </tr>
+    {/programs}
 </table>
 <a class="btn btn-primary" href="/admin/add">Add a New Program</a>
 
