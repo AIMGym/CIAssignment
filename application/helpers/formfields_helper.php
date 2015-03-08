@@ -162,12 +162,14 @@ if (!function_exists('showImage')) {
 
 if (!function_exists('makeImageUploader'))
 {
-    function makeImageUploader($label, $name,$explain="") {
+    function makeImageUploader($label, $name,$explain="", $size=25)
+    {
       $CI = &get_instance();
       $parms = array(
         'label' => $label,
         'name' => $name,
-        'explain' => $explain
+        'explain' => $explain,
+        'size' => $size
       );
       return $CI->parser->parse('_fields/image_upload', $parms, true);
     }
