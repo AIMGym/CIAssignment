@@ -11,7 +11,7 @@ if (!defined('APPPATH'))
 <div class="row">
     
     <!-- main content -->
-    <div id="home-main" class="span12">
+    <div id="start" class="span12">
         <h2>{name}</h2>
         <p>{description}<br/><br/>
             <strong>Telephone:</strong> {contact}<br/>
@@ -22,7 +22,7 @@ if (!defined('APPPATH'))
             <tr>
                 <td>
                     <!-- set of images -->
-                    <a href="{image}" data-lightbox="sight" data-title="{name}">
+                    <a href="{image}" data-lightbox="programs" data-title="{name}">
                         <img class="img-polaroid" src="{image}" width="200"/></a>
                 </td>
             </tr>

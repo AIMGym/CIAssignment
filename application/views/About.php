@@ -1,5 +1,5 @@
 <div class="row">
-    <div id="home-main" class="span8">
+    <div id="start" class="span8">
         <h2>About</h2>
         
         <p>AIM Gym opened it’s doors in Downtown Vancouver in 2007. This brand new state-of-the-art club redefined the standard for gyms across the Lower Mainland.  To keep up with demand for more locations, AIM Gym merged with Fitness World in 2009, creating the AIM Fitness World and Sports Club brand. With over 50 years of experience in the fitness industry our dedication to our members is unsurpassed. 

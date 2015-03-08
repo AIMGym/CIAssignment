@@ -5,7 +5,7 @@ if (!defined('APPPATH'))
 <div class="row">
     
     <!-- main content -->
-    <div id="home-main" class="span12">
+    <div id="start" class="span12">
         <table class="table-condensed">
             <tr style="border-top: thick solid grey">
                 <td rowspan="2">
