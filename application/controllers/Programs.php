@@ -19,19 +19,19 @@ class Programs extends Application{
         
         //Retrieve all programs from relevant database
         $program = $this->Programs->getall();
-        $this->data['Programs'] = $program;
+        $this->data['program'] = $program;
         
         $this->render();
     }
     
     //Returns a specified page regarding a program
-    function getOne($_id) {
+    function getOne($id) {
 
         //Required page
         $this->data['pagebody'] = 'Programs_sub';
 
         //Retrieve info for specified page by id
-        $program = $this->Programs->get($_id);
+        $program = $this->Programs->get($id);
 
         //Populating page data
         $this->data['id'] = $program->id;
