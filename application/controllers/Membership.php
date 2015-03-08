@@ -26,7 +26,8 @@ class Membership extends Application{
     }
     
     //Returns a specified page regarding memberships
-    function getOne($id) {
+    function getOne($id) 
+    {
 
         //Required page
         $this->data['pagebody'] = 'membership_sub';

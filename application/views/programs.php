@@ -6,6 +6,7 @@ if (!defined('APPPATH'))
     
     <!-- main content -->
     <div id="start" class="span12">
+       {program}
         <table class="table-condensed">
             <tr style="border-top: thick solid grey">
                 <td rowspan="2">
@@ -23,9 +24,11 @@ if (!defined('APPPATH'))
                     {caption} 
                 </td>
                 <td>
-                        &nbsp;&nbsp;&nbsp;<a class="btn btn-small" href="/Programs/getOne/{id}">See Details</a><br/>&nbsp;
+                        &nbsp;&nbsp;&nbsp;<a class="btn btn-small" href="/Program/getOne/{id}">See Details</a><br/>&nbsp;
                 </td>
             </tr>
+        </table>
+       {/program}
     </div>
     <!-- end main content-->
 </div>
