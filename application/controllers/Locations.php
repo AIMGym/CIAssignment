@@ -19,32 +19,32 @@ class Locations extends Application{
         $this->data['pagebody'] = 'Locations';
         
         //Retrieve all programs from relevant database
-        $locations = $this->Location->getall();
-        $this->data['locations'] = $locations;
+        $location = $this->Location->getall();
+        $this->data['location'] = $location;
         
         $this->render();
     }
     
     //Returns a specified page regarding locations
-    function getOne($_id) {
+    function getOne($id) {
 
         //Required page
         $this->data['pagebody'] = 'Locations_sub';
 
         //Retrieve info for specified page by id
-        $record = $this->Locations->get($_id);
+        $location = $this->Location->get($id);
 
         //Populating page with from database
-        $this->data['id'] = $record->id;
-        $this->data['name'] = $record->name;
-        $this->data['caption'] = $record->caption;
-        $this->data['description'] = $record->description;
-        $this->data['address'] = $record->address;
-        $this->data['contact'] = $record->contact;
-        $this->data['image1'] = $record->image1;
-        $this->data['image2'] = $record->image2;
-        $this->data['image3'] = $record->image3;
-        $this->data['image4'] = $record->image4;
+        $this->data['id'] = $location->id;
+        $this->data['name'] = $location->name;
+        $this->data['caption'] = $location->caption;
+        $this->data['description'] = $location->description;
+        $this->data['address'] = $location->address;
+        $this->data['contact'] = $location->contact;
+        $this->data['image1'] = $location->image1;
+        $this->data['image2'] = $location->image2;
+        $this->data['image3'] = $location->image3;
+        $this->data['image4'] = $location->image4;
 
         $this->render();
     }
