@@ -1,3 +1,5 @@
+
+
 <p class="lead">
     Admin - program Maintenance
 </p>
@@ -13,19 +15,15 @@
         <td>{id}</td>
         <td>{name}</td>
         <td>{caption}</td>
-        <td><a class="btn btn-danger" href="/admin/delete/{id}">Delete</a></td>
+        <?php
+
+        echo  '<td><a class="btn btn-danger" href="/admin/delete/{id}" onclick="return confirm(\'Are you sure you want to Remove it?\')" >Delete</a></td>';
+         ?>
     </tr>
     {/programs}
 </table>
 <a class="btn btn-primary" href="/admin/add">Add a New Program</a>
 
 <!-- script to catch all the confirmation dialog events to see if delete should occur -->
-<script type="text/javascript">
-    var elems = document.getElementsByClassName('confirmation');
-    var confirmIt = function (e) {
-        if (!confirm('Are you sure you want to delete this program?')) e.preventDefault();
-    };
-    for (var i = 0, l = elems.length; i < l; i++) {
-        elems[i].addEventListener('click', confirmIt, false);
-    }
-</script>
+    
+    

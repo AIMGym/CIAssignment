@@ -11,6 +11,7 @@ class Admin extends Application {
     function __construct()
     {
         parent::__construct();
+        $this->load->helper(array('form', 'url'));
         $this->load->helper('formfields'); 
       
     }
@@ -47,10 +48,10 @@ class Admin extends Application {
         $this->data['fdescription'] = makeTextArea('Description', 'description', $program->description, 'Detailed description of the program', 500, 40, 5);
         $this->data['flocation'] = makeTextField('Location', 'location', $program->location, 'The address/location of the program');
         $this->data['fprice'] = makeTextField('Price', 'price', $program->price, 'Cost of the program monthly');
-        $this->data['fimage1'] = makeImageUploader('Main Picture', 'picmain', 'Choose a file');
-        $this->data['fimage2'] = makeImageUploader('Picture 1', 'pic1', 'Choose a file');
-        $this->data['fimage3'] = makeImageUploader('Picture 2', 'pic2', 'Choose a file');
-        $this->data['fimage4'] = makeImageUploader('Picture 3', 'pic3', 'Choose a file');
+        $this->data['fimage1'] = makeImageUploader('Main Picture', 'image1', 'Choose a file');
+        $this->data['fimage2'] = makeImageUploader('Picture 1', 'image2', 'Choose a file');
+        $this->data['fimage3'] = makeImageUploader('Picture 2', 'image3', 'Choose a file');
+        $this->data['fimage4'] = makeImageUploader('Picture 3', 'image4', 'Choose a file');
                
         $this->data['pagebody'] = 'add_program';
         
@@ -71,47 +72,47 @@ class Admin extends Application {
         $record->description = $this->input->post('description');
         $record->location = $this->input->post('location');
         $record->price = $this->input->post('price');
+        $record->image1 = $this->input->post('image1');
         
+       
             $config['upload_path'] = 'data/images';  
             $config['allowed_types'] = 'gif|jpg|png'; 
             $config['max_size']	= '3000'; //in kilobytes
             $config['max_width']  = '1600';
             $config['max_height']  = '900';
             $config['remove_spaces'] = true;  //substitutes spaces with underscores
-            $config['overwrite'] = true; //allows overwriting of previous files
+            $config['overwrite'] = false; //allows overwriting of previous files
             $this->load->library('upload', $config); //load upload library '/libraries/Upload.php'
-            
-
-            //these are the names of your upload buttons from your form
-            $upload_controls = array('picmain', 'pic1', 'pic2', 'pic3');
+                        
+            $upload_controls = array('image1', 'image2', 'image3', 'image4');
             foreach ($upload_controls as $uploadpic)
-            {
-                //this is where i rename the files to 'attraction_id_ + formname + last 4 digits of the orignal name'
-                // ie.   thisismypic.jpg  -->  'attraction_id_pic1.jpg' //attraction_id will be replaced with a variable.
-                if($_FILES[$uploadpic]['name'] != ""){
-                    $temp = $_FILES[$uploadpic]['name'];
-                    $_FILES[$uploadpic]['name'] =  $record->id . $uploadpic . substr($temp, -4);
-                }
-
+            {    
                 //call the codeigniter upload $uploadpic is the form upload control
                 if ($this->upload->do_upload($uploadpic))
                 {   
                     if($uploadpic == 'picmain'){
-                        $record['image1'] = '/data/images/' . $_FILES[$uploadpic]['name'];
+                        $record->image1 = '/data/images/' . $_FILES[$uploadpic]['name'];
                     }
                     if($uploadpic == 'pic1'){
-                        $record['image2'] = '/data/images/' . $_FILES[$uploadpic]['name'];
+                        $record->image2 = '/data/images/' . $_FILES[$uploadpic]['name'];
                     }
                     if($uploadpic == 'pic2'){
-                        $record['image3'] = '/data/images/' . $_FILES[$uploadpic]['name'];
+                        $record->image3 = '/data/images/' . $_FILES[$uploadpic]['name'];
                     }
                     if($uploadpic == 'pic3'){
-                        $record['image4'] = '/data/images/' . $_FILES[$uploadpic]['name'];
+                        $record->image4 = '/data/images/' . $_FILES[$uploadpic]['name'];
                     }
+                    
+                }
+                else
+                {
+                   
+                    $this->errors[] = $this->upload->display_errors();
+ 
                 }
             } // end of foreach upload
             
-        
+      
         //validate
         if (empty($record->name))
         $this->errors[] = 'You must specify a name.';
