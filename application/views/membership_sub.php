@@ -2,6 +2,15 @@
 if (!defined('APPPATH'))
     exit('No direct script access allowed');
 ?>
+
+    <link href="../../assets/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="../../assets/css/lightbox.css" rel="stylesheet" type="text/css"/>
+    <script src="../../assets/js/lightbox.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../../assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+        
 <div class="row">
     
     <!-- main content -->

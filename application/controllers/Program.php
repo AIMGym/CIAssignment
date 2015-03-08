@@ -7,15 +7,16 @@
  * Controller page for the "Program" page view
  *
  */
-class Programs extends Application{
+class Program extends Application{
     
     function __construct() {
         parent::__construct();
     }
     
-    function index() {
+    function index() 
+    {
         
-        $this->data['pagebody'] = 'Programs';
+        $this->data['pagebody'] = 'programs';
         
         //Retrieve all programs from relevant database
         $program = $this->Programs->getall();
@@ -25,10 +26,11 @@ class Programs extends Application{
     }
     
     //Returns a specified page regarding a program
-    function getOne($id) {
+    function getOne($id)
+    {
 
         //Required page
-        $this->data['pagebody'] = 'Programs_sub';
+        $this->data['pagebody'] = 'programs_sub';
 
         //Retrieve info for specified page by id
         $program = $this->Programs->get($id);
@@ -38,7 +40,6 @@ class Programs extends Application{
         $this->data['name'] = $program->name;
         $this->data['caption'] = $program->caption;
         $this->data['description'] = $program->description;
-        $this->data['data_added'] = $program->date_added;
         $this->data['location'] = $program->location;
         $this->data['price'] = $program->price;
         $this->data['image1'] = $program->image1;
