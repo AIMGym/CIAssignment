@@ -29,14 +29,10 @@
             </ul>
             </div>
         </nav>
-        
         <!--start of content-->
         <div class ="wrapper">
-            
             {content}
-
         </div>
-        
         <!--footer -->
         <footer>
             <p> &copy; <?=date('Y')?> AIM gym </p>
