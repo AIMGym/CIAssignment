@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `locations` (
 `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `caption` varchar(100) NOT NULL,
+  `caption` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `description` varchar(500) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `address` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `contact` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,

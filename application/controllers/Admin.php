@@ -97,7 +97,7 @@ class Admin extends Application {
         
         $this->render();
     }
-    // process a program creation
+    // process a program
     function confirm()
     {
         

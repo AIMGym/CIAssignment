@@ -17,6 +17,7 @@ class Locations extends MY_Model
         parent::_construct('locations', 'id');
     }
     
+    //get all the locations form the database
     public function getall()
     {
         $locations = array();
