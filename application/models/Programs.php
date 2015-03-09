@@ -17,6 +17,7 @@ class Programs extends MY_Model
         parent::_construct('programs', 'id');
     }
     
+    //get all the programs form the database
     public function getall()
     {
         $programs = array();
