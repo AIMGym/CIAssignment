@@ -4,7 +4,6 @@ if (!defined('APPPATH'))
 
 ?>
 <div class="row">
-    
     <!-- main content -->
     <div id="start" class="span12">
         {location}

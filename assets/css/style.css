@@ -12,6 +12,14 @@ body {}
     background: #f2f2f2;
     min-height: 500px;
     padding-left: 25px;
+    text-align:center;
+    padding-right: 25px;
+}
+#background {
+    background: #f2f2f2;
+    min-height: 500px;
+    padding: 20px;
+
 }
 
 #home-side {
@@ -33,3 +41,23 @@ footer {
     text-align: center;
 }
 
+.link-block {
+margin: 15px 0 0 0;
+padding: 0;
+background: #fff;
+border: 1px solid #d1d1d1;
+text-align: center;
+width: 250px;
+min-height: 200px;
+}
+#left{
+    float:right;
+    background:#D1EEEE;
+    padding:3em 3em 3em 3em;
+    margin: 0px 0px 0px 15px;
+}
+
+.col-md-3 {
+    float: left;
+    margin: 15px 0 0 15px;
+}
