@@ -11,7 +11,7 @@ if (!defined('APPPATH'))
             <div class="link-block">
                 <br/>
                 <strong>{name}</strong><br/><br/>
-                <img src="{image1}" width="240px" height="160px"/><br/></br>
+                <img src="{image1}" width="150px" height="80px"/><br/></br>
                 <a class="btn btn-small" href="/Membership/getOne/{id}">See Details</a><br/>&nbsp;
             </div>
         </div>

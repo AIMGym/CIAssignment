@@ -33,3 +33,18 @@ footer {
     text-align: center;
 }
 
+.link-block {
+margin: 15px 0 0 0;
+padding: 0;
+background: #fff;
+border: 1px solid #d1d1d1;
+text-align: center;
+width: 250px;
+min-height: 200px;
+}
+
+
+.col-md-3 {
+    float: left;
+    margin: 15px 0 0 15px;
+}
