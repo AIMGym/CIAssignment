@@ -17,6 +17,7 @@ class Memberships extends MY_Model
         parent::_construct('memberships', 'id');
     }
     
+    //get all the memberships form the database
     public function getall()
     {
         $memberships = array();
@@ -44,5 +45,7 @@ class Memberships extends MY_Model
             return null;
         }       
     }
+    
+    
     
 }

@@ -11,14 +11,14 @@ class Gymdata extends CI_Model {
 	
     var $data = array(
         array('id' => '1', 
-            'name' => 'Gym Main Page', 
+            'name' => 'Home of AIM', 
             'image' => '../data/images/resized/gym_mains.jpg',
-            'description' => 'The image shows a BullsEye and some guys training - BUllsEye = AIM !!',
+            'description' => 'Bullseye! We guarantee your fitness will be AIMed in the right direction at this gym!',
             'importance' => '1'),
         array('id' => '2', 
-            'name' => 'About Us', 
+            'name' => 'Our Mission', 
             'image' => '../data/images/resized/gym_enviro.jpg',
-            'description' => 'Happy people training in our gym - means happy gym',
+            'description' => 'Dedicated to bringing fitness and personal strength to the forefront.',
             'importance' => '2'),
         array('id' => '3', 
             'name' => 'Membership Information', 
