@@ -3,7 +3,6 @@ if (!defined('APPPATH'))
     exit('No direct script access allowed');
 ?>
 <div class="row">
-    
     <!-- main content -->
     <div id="start" class="span12">
         {membership}
