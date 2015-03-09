@@ -1,7 +1,7 @@
 <h2> Admin - Adding A new Program</h2>
 <!-- form to add a new attraction item -->
 <div class="errors">{message}</div>
-<form action="/admin/confirm" method="post">
+<form action="/admin/confirm" method="post" enctype="multipart/form-data">
      {fname}     
      {fcaption}
      {fdescription}

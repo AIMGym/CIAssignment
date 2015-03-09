@@ -6,6 +6,14 @@
  * and open the template in the editor.
  */
 
+/**
+ * The admin controller where we add and delete
+ * new programs.
+ * 
+ * @author MG
+ *
+ * ------------------------------------------------------------------------
+ */
 class Admin extends Application {
 
     function __construct()
@@ -18,20 +26,21 @@ class Admin extends Application {
 
     function index()
     {
+        $this->load->helper(array('form', 'url')); 
         $this->data['title'] = 'Programs Maintenance';
         $this->data['programs'] = $this->Programs->getall();
         $this->data['pagebody'] = 'admin_main'; 
         $this->render();
     }
   
-    // Add a new quotation
+    // Add a new program
     function add()
     {
       $program = $this->Programs->create();
       $this->present($program);
     }
     
-    // Present a quotation for adding/editing
+    // Present a program for adding
     function present($program)
     {
         $message = '';
@@ -59,8 +68,36 @@ class Admin extends Application {
         
         $this->render();
     }
-    
-    // process a quotation edit
+    // Present a program for editing
+    function edit($programs)
+    {
+        $message = '';
+        if (count($this->errors) > 0)
+        {
+            foreach ($this->errors as $booboo)
+            $message .= $booboo . BR;
+        }
+        $this->data['message'] = $message;
+        $program = $this->Programs->get($programs);
+        
+        $this->data['fid'] = makeTextField('ID#', 'id', $programs,"Unique quote identifier, system-assigned");
+        $this->data['fname'] = makeTextField('Name', 'name', $program->name);
+        $this->data['fcaption'] = makeTextField('Caption', 'caption', $program->caption, 'Summary of Program');
+        $this->data['fdescription'] = makeTextArea('Description', 'description', $program->description, 'Detailed description of the program', 500, 40, 5);
+        $this->data['flocation'] = makeTextField('Location', 'location', $program->location, 'The address/location of the program');
+        $this->data['fprice'] = makeTextField('Price', 'price', $program->price, 'Cost of the program monthly');
+        $this->data['fimage1'] = makeImageUploader('Main Picture', 'image1', 'Choose a file');
+        $this->data['fimage2'] = makeImageUploader('Picture 1', 'image2', 'Choose a file');
+        $this->data['fimage3'] = makeImageUploader('Picture 2', 'image3', 'Choose a file');
+        $this->data['fimage4'] = makeImageUploader('Picture 3', 'image4', 'Choose a file');
+               
+        $this->data['pagebody'] = 'edit_program';
+        
+        $this->data['fsubmit'] = makeSubmitButton('Edit Program', "Click here to validate the quotation data", 'btn-success');
+        
+        $this->render();
+    }
+    // process a program creation
     function confirm()
     {
         
@@ -72,10 +109,8 @@ class Admin extends Application {
         $record->description = $this->input->post('description');
         $record->location = $this->input->post('location');
         $record->price = $this->input->post('price');
-        $record->image1 = $this->input->post('image1');
-        
        
-            $config['upload_path'] = 'data/images';  
+            $config['upload_path'] = 'data/images/';  
             $config['allowed_types'] = 'gif|jpg|png'; 
             $config['max_size']	= '3000'; //in kilobytes
             $config['max_width']  = '1600';
@@ -87,31 +122,32 @@ class Admin extends Application {
             $upload_controls = array('image1', 'image2', 'image3', 'image4');
             foreach ($upload_controls as $uploadpic)
             {    
-                //call the codeigniter upload $uploadpic is the form upload control
-                if ($this->upload->do_upload($uploadpic))
-                {   
-                    if($uploadpic == 'picmain'){
-                        $record->image1 = '/data/images/' . $_FILES[$uploadpic]['name'];
-                    }
-                    if($uploadpic == 'pic1'){
-                        $record->image2 = '/data/images/' . $_FILES[$uploadpic]['name'];
-                    }
-                    if($uploadpic == 'pic2'){
-                        $record->image3 = '/data/images/' . $_FILES[$uploadpic]['name'];
-                    }
-                    if($uploadpic == 'pic3'){
-                        $record->image4 = '/data/images/' . $_FILES[$uploadpic]['name'];
-                    }
-                    
-                }
-                else
-                {
-                   
-                    $this->errors[] = $this->upload->display_errors();
- 
-                }
+                            
+                    if ($this->upload->do_upload($uploadpic))
+                    {   
+                        $data = $this->upload->data();
+
+                        if($uploadpic == 'image1')
+                        {
+                            $record->image1 = '/data/images/' . $data['file_name'];
+                        }
+                        if($uploadpic == 'image2')
+                        {
+                            $record->image2 = '/data/images/' . $data['file_name'];
+                        }
+                        if($uploadpic == 'image3')
+                        {
+                            $record->image3 = '/data/images/' . $data['file_name'];
+                        }
+                        if($uploadpic == 'image4')
+                        {
+                            $record->image4 = '/data/images/' . $data['file_name'];
+                        }
+
+                    }                 
             } // end of foreach upload
             
+            echo $this->upload->display_errors();
       
         //validate
         if (empty($record->name))
@@ -138,7 +174,7 @@ class Admin extends Application {
     
     function delete($program)
     {
-        //get attraction to delete
+        //get program to delete
         $record = (array)$this->Programs->get($program); 
         //Column names for images
         $filesToDelete = array('image1', 'image2', 'image3', 'image4'); 

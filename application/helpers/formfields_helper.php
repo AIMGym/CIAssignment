@@ -175,4 +175,20 @@ if (!function_exists('makeImageUploader'))
     }
 }
 
+if (!function_exists('makeImageUploaders'))
+{
+    function makeImageUploaders($label, $name, $value , $explain="", $size=25)
+    {
+      $CI = &get_instance();
+      $parms = array(
+        'label' => $label,
+        'name' => $name,
+        'value' => $value,
+        'explain' => $explain,
+        'size' => $size
+          
+      );
+      return $CI->parser->parse('_fields/image_uploads', $parms, true);
+    }
+}
 /* End of file */

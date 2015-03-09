@@ -1,5 +1,3 @@
-
-
 <p class="lead">
     Admin - program Maintenance
 </p>
@@ -8,6 +6,7 @@
         <th>ID Number</th>
         <th>Name</th>
         <th>Caption</th>
+        <th>Edit</th>
         <th>Delete</th>
     </tr>
     {programs}
@@ -15,6 +14,7 @@
         <td>{id}</td>
         <td>{name}</td>
         <td>{caption}</td>
+        <td><a class="btn btn-info" href="/admin/edit/{id}">Edit</a></td>
         <?php
 
         echo  '<td><a class="btn btn-danger" href="/admin/delete/{id}" onclick="return confirm(\'Are you sure you want to Remove it?\')" >Delete</a></td>';
