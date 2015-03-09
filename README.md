@@ -20,3 +20,12 @@ The user will relocate to the “Login” page where they will be prompted for t
 The user will be taken to the “FAQ” page (Frequently Asked Questions) that will display a list of common questions one might expect to find when entering a site of this nature.	
 
 The vision of the website is to feature a header photo spanning the top of the page which will be directly succeeded by a menu bar featuring links to all relevant pages of the website, including a login bar at the far right. The colour scheme will feature light, eye-pleasing tones, and photos will be prevalent throughout all pages as seen fit. 
+
+
+ASSIGNMENT 2:
+
+HOW TO RUN: Our database is called comp4711 - as specified
+There are 4 sql files under data- comp4711.sql is the complete database file (however it does not work on some machines)
+If there are errors, create the database manually and then use the other 3 sql files to create the tables.
+
+The Admin page can be accessed under FAQ's/LOGIN button
